@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_PASSWORD: yourpassword
+      POSTGRES_DB: miran_fitness
+    ports:
+      - "5432:5432"

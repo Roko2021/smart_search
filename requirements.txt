@@ -1,0 +1,7 @@
+django==4.2
+djangorestframework==3.14.0
+django-postgres-extra==2.0.4
+googletrans==4.0.0-rc1
+djangorestframework-simplejwt==5.2.2
+redis==4.5.5
+psycopg2-binary==2.9.6

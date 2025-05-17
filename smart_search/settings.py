@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     "rest_framework",  # تأكد من وجود هذا
     'storages',
     'rest_framework_simplejwt',
+    'django.contrib.postgres',
 ]
 
 # تكوين AWS S3
@@ -52,15 +53,21 @@ AWS_DEFAULT_ACL = 'public-read'  # إذا كنت تريد الملفات عام�
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379/1",
+        "LOCATION": "redis://localhost:6379/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        },
+        "KEY_PREFIX": "miran_search"
     }
 }
 
 REST_FRAMEWORK = {
-    'DEFAULT_RENDERER_CLASSES': [
-        'rest_framework.renderers.JSONRenderer',  # أساسي لعرض JSON
-        'rest_framework.renderers.BrowsableAPIRenderer',  # اختياري للواجهة الرسومية
+    'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',  # اختياري لواجهة الويب
     ]
 }
 
