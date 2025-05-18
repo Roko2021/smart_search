@@ -115,7 +115,13 @@ DATABASES = {
     }
 }
 
+POSTGRES_SEARCH_CONFIG = {
+    'arabic': 'arabic',
+    'english': 'english'
+}
 
+SEARCH_MIN_CHARS = 2  # الحد الأدنى لعدد الأحرف
+SEARCH_SIMILARITY_THRESHOLD = 0.1  # عتبة التشابه
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 

@@ -1,6 +1,7 @@
 from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
 from difflib import get_close_matches
 import googletrans
+from .models import Product
 
 translator = googletrans.Translator()
 
