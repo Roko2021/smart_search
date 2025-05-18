@@ -21,6 +21,8 @@
 psql -U postgres -c "CREATE DATABASE miran_fitness;"
 psql -U postgres -d miran_fitness -c "CREATE EXTENSION pg_trgm;"
 
+
+## تشغيل الميجراشن
 python manage.py migrate
 
 # بحث بالعربية
